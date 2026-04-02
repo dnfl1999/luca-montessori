@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Luca Montessori Gallery Placeholder</title>
+  <desc id="desc">Placeholder image for Luca Montessori gallery cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dcc298"/>
+      <stop offset="50%" stop-color="#f5ecda"/>
+      <stop offset="100%" stop-color="#9eb49a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="225" cy="180" r="120" fill="#fffdf8" fill-opacity="0.2"/>
+  <circle cx="1030" cy="160" r="92" fill="#fffdf8" fill-opacity="0.18"/>
+  <circle cx="950" cy="730" r="140" fill="#fffdf8" fill-opacity="0.14"/>
+  <rect x="120" y="170" width="960" height="560" rx="40" fill="#fffdf8" fill-opacity="0.42" stroke="#fffdf8" stroke-opacity="0.7" stroke-width="6"/>
+  <text x="50%" y="44%" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="74" font-weight="800" fill="#7a684d">Luca Montessori</text>
+  <text x="50%" y="54%" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="600" fill="#6f685c">Gallery image will be updated with school photos</text>
+  <text x="50%" y="63%" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="600" fill="#6f685c">Prepared environment by age and stage</text>
+</svg>
