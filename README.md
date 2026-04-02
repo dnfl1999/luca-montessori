@@ -11,7 +11,6 @@ Production files:
 - `vi.html`
 - `style.css`
 - `site-lite.js`
-- `netlify.toml`
 - `images/favicon.svg`
 - `images/gallery-placeholder.svg`
 
@@ -34,7 +33,7 @@ Not used in production and safe to remove from the working folder:
 - Korean page is `ko.html`
 - Vietnamese page is `vi.html`
 - All internal asset paths are configured with relative paths for static hosting
-- Netlify publish directory is the project root `.`
+- For Netlify, set the publish directory to the project root `.`
 
 ## Netlify Setup
 
@@ -73,7 +72,7 @@ Open a terminal in this project folder and run:
 
 ```bash
 git init
-git add index.html ko.html vi.html style.css site-lite.js netlify.toml images README.md .gitignore
+git add index.html ko.html vi.html style.css site-lite.js images README.md .gitignore
 git commit -m "Initial static site setup"
 git branch -M main
 git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
@@ -165,7 +164,7 @@ git init
 3. Add the production files first:
 
 ```bash
-git add index.html ko.html vi.html style.css site-lite.js netlify.toml images README.md .gitignore
+git add index.html ko.html vi.html style.css site-lite.js images README.md .gitignore
 ```
 
 4. Review staged files:
