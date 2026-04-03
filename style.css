@@ -151,6 +151,72 @@ textarea {
   color: var(--forest);
 }
 
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(157, 126, 81, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(157, 126, 81, 0.24);
+}
+
+.menu-toggle-icon,
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  display: block;
+  width: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle-icon {
+  position: relative;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle-icon::before {
+  top: -5px;
+}
+
+.menu-toggle-icon::after {
+  top: 5px;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::after {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
 .hero-section {
   padding: 56px 0 48px;
 }
@@ -1106,15 +1172,82 @@ textarea {
 
   .header-inner {
     min-height: auto;
-    padding: 16px 0 12px;
-    flex-direction: column;
-    gap: 10px;
+    padding: 14px 0 10px;
+    gap: 12px;
+    align-items: center;
   }
 
   .header-actions {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    order: 2;
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    width: min(calc(100vw - 32px), 320px);
+    justify-self: end;
+    transform-origin: top right;
+    transition: max-height 0.24s ease, opacity 0.2s ease, transform 0.2s ease, margin-top 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="false"] + .site-nav {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+  }
+
+  .menu-toggle[aria-expanded="true"] + .site-nav {
+    max-height: 420px;
+    margin-top: 6px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
     width: 100%;
-    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(157, 126, 81, 0.12);
+    border-radius: 24px;
+    background: rgba(255, 253, 248, 0.94);
+    box-shadow: 0 16px 32px rgba(69, 53, 36, 0.08);
+  }
+
+  .nav-list a {
+    justify-content: flex-start;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 0.92rem;
+    text-align: left;
+  }
+
+  .language-switch {
+    order: 1;
+    min-width: 58px;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
   }
 
   .hero-copy {
@@ -1135,17 +1268,12 @@ textarea {
   }
 
   .header-inner {
-    padding: 12px 0 10px;
-    gap: 8px;
-    align-items: stretch;
-  }
-
-  .logo {
-    justify-content: center;
+    padding: 12px 0 8px;
+    gap: 10px;
   }
 
   .logo-image {
-    height: 56px;
+    height: 48px;
   }
 
   .header-actions {
@@ -1153,35 +1281,37 @@ textarea {
   }
 
   .site-nav {
-    width: 100%;
+    width: min(calc(100vw - 32px), 300px);
   }
 
   .nav-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-    width: 100%;
+    gap: 5px;
+    padding: 9px;
   }
 
   .nav-list a {
-    justify-content: center;
     min-height: 40px;
-    padding: 0 8px;
-    font-size: 0.84rem;
-    line-height: 1.2;
-    text-align: center;
+    padding: 0 13px;
+    font-size: 0.88rem;
+    line-height: 1.25;
   }
 
   .language-switch {
-    align-self: flex-end;
-    min-width: 68px;
-    min-height: 38px;
-    padding: 0 12px;
+    min-width: 56px;
+    min-height: 36px;
+    padding: 0 10px;
     font-size: 0.8rem;
   }
 
+  .menu-toggle {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 0.84rem;
+    gap: 8px;
+  }
+
   .hero-section {
-    padding: 18px 0 18px;
+    padding: 14px 0 18px;
   }
 
   .hero-grid {
@@ -1263,23 +1393,34 @@ textarea {
   }
 
   .header-inner {
-    padding: 12px 0 10px;
+    padding: 10px 0 8px;
     gap: 8px;
   }
 
   .header-actions {
+    grid-template-columns: 1fr auto;
+    width: 100%;
     gap: 8px;
+  }
+
+  .site-nav {
+    width: min(calc(100vw - 24px), 100%);
+  }
+
+  .menu-toggle {
+    justify-self: start;
+    min-height: 36px;
+    padding: 0 13px;
   }
 
   .nav-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 4px;
+    padding: 8px;
   }
 
   .nav-list a {
-    justify-content: center;
-    min-height: 40px;
-    padding: 0 10px;
+    min-height: 38px;
+    padding: 0 12px;
     font-size: 0.84rem;
   }
 
@@ -1290,11 +1431,11 @@ textarea {
   }
 
   .logo-image {
-    height: 50px;
+    height: 44px;
   }
 
   .hero-section {
-    padding: 18px 0 20px;
+    padding: 12px 0 20px;
   }
 
   .hero-grid {
@@ -1445,11 +1586,23 @@ textarea {
   }
 
   .header-inner {
-    padding: 10px 0 8px;
+    padding: 9px 0 7px;
   }
 
   .logo-image {
-    height: 46px;
+    height: 40px;
+  }
+
+  .menu-toggle {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.8rem;
+  }
+
+  .language-switch {
+    min-width: 54px;
+    min-height: 34px;
+    font-size: 0.76rem;
   }
 
   .hero-copy,

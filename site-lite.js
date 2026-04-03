@@ -4,6 +4,8 @@ const menuLinks = [...document.querySelectorAll(".site-nav a")];
 const sections = [...document.querySelectorAll("main section[id]")];
 const langPage = document.body?.dataset.langPage;
 const galleryImages = document.querySelectorAll(".gallery-media img");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobileMenuQuery = window.matchMedia("(max-width: 820px)");
 const preferredLanguageKey = "luca-preferred-language";
 
 const updateStoredLanguage = (value) => {
@@ -20,6 +22,73 @@ if (langPage === "select") {
   }
 } else {
   updateStoredLanguage(langPage);
+}
+
+const updateMenuLabel = (expanded) => {
+  if (!menuToggle) {
+    return;
+  }
+
+  menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+  menuToggle.setAttribute(
+    "aria-label",
+    expanded ? (menuToggle.dataset.labelClose || "Close menu") : (menuToggle.dataset.labelOpen || "Open menu")
+  );
+};
+
+const closeMobileMenu = () => {
+  if (!menuToggle || !mobileMenuQuery.matches) {
+    return;
+  }
+
+  updateMenuLabel(false);
+};
+
+const syncMobileMenu = () => {
+  if (!menuToggle) {
+    return;
+  }
+
+  if (!mobileMenuQuery.matches) {
+    updateMenuLabel(false);
+  }
+};
+
+if (menuToggle) {
+  updateMenuLabel(false);
+
+  menuToggle.addEventListener("click", () => {
+    if (!mobileMenuQuery.matches) {
+      return;
+    }
+
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    updateMenuLabel(!expanded);
+  });
+
+  if (typeof mobileMenuQuery.addEventListener === "function") {
+    mobileMenuQuery.addEventListener("change", syncMobileMenu);
+  } else if (typeof mobileMenuQuery.addListener === "function") {
+    mobileMenuQuery.addListener(syncMobileMenu);
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!mobileMenuQuery.matches || menuToggle.getAttribute("aria-expanded") !== "true") {
+      return;
+    }
+
+    if (event.target.closest(".header-actions")) {
+      return;
+    }
+
+    closeMobileMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+    }
+  });
 }
 
 document.addEventListener("click", (event) => {
@@ -53,6 +122,8 @@ document.addEventListener("click", (event) => {
     behavior: "smooth",
     block: "start"
   });
+
+  closeMobileMenu();
 });
 
 if (contactForm && formMessage) {
