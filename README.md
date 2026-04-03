@@ -11,8 +11,8 @@ Production files:
 - `vi.html`
 - `style.css`
 - `site-lite.js`
-- `images/favicon.svg`
-- `images/gallery-placeholder.svg`
+- `images/branding/luca-favicon.svg`
+- `images/gallery/gallery-placeholder.svg`
 
 Optional project files:
 
@@ -30,7 +30,7 @@ Not used in production and safe to remove from the working folder:
 Current manifest status:
 
 - `site.webmanifest` is not linked in `index.html`, `ko.html`, or `vi.html`
-- the live site currently uses only `images/favicon.svg` in the HTML head
+- the live site currently uses `images/branding/luca-favicon.svg` in the HTML head
 - `site.webmanifest` should be treated as unused unless a real PWA setup is added later
 
 ## Deployment Notes
@@ -220,5 +220,5 @@ When real contact information is ready:
 
 - Replace the phone placeholder text with a real `tel:` link
 - Replace disabled Zalo and Facebook placeholder spans with real anchor links
-- Replace `images/gallery-placeholder.svg` with actual school photos if available
-- Replace `images/favicon.svg` if a final branded favicon is prepared
+- Replace `images/gallery/gallery-placeholder.svg` with actual school photos if available
+- Replace `images/branding/luca-favicon.svg` if a final branded favicon is prepared
