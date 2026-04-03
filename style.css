@@ -1106,13 +1106,15 @@ textarea {
 
   .header-inner {
     min-height: auto;
-    padding: 24px 0;
+    padding: 16px 0 12px;
     flex-direction: column;
+    gap: 10px;
   }
 
   .header-actions {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .hero-copy {
@@ -1133,8 +1135,8 @@ textarea {
   }
 
   .header-inner {
-    padding: 18px 0 14px;
-    gap: 12px;
+    padding: 12px 0 10px;
+    gap: 8px;
     align-items: stretch;
   }
 
@@ -1143,11 +1145,11 @@ textarea {
   }
 
   .logo-image {
-    height: 68px;
+    height: 56px;
   }
 
   .header-actions {
-    gap: 12px;
+    gap: 8px;
   }
 
   .site-nav {
@@ -1157,25 +1159,29 @@ textarea {
   .nav-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
     width: 100%;
   }
 
   .nav-list a {
     justify-content: center;
-    min-height: 44px;
-    padding: 0 10px;
-    font-size: 0.9rem;
+    min-height: 40px;
+    padding: 0 8px;
+    font-size: 0.84rem;
+    line-height: 1.2;
     text-align: center;
   }
 
   .language-switch {
-    min-width: 100%;
-    min-height: 44px;
+    align-self: flex-end;
+    min-width: 68px;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
 
   .hero-section {
-    padding: 24px 0 18px;
+    padding: 18px 0 18px;
   }
 
   .hero-grid {
@@ -1257,37 +1263,38 @@ textarea {
   }
 
   .header-inner {
-    padding: 18px 0 16px;
-    gap: 14px;
+    padding: 12px 0 10px;
+    gap: 8px;
   }
 
   .header-actions {
-    gap: 10px;
+    gap: 8px;
   }
 
   .nav-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
 
   .nav-list a {
     justify-content: center;
-    min-height: 42px;
-    padding: 0 12px;
-    font-size: 0.88rem;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 0.84rem;
   }
 
   .language-switch {
-    min-width: 72px;
-    min-height: 40px;
+    min-width: 60px;
+    min-height: 36px;
+    padding: 0 10px;
   }
 
   .logo-image {
-    height: 60px;
+    height: 50px;
   }
 
   .hero-section {
-    padding: 28px 0 20px;
+    padding: 18px 0 20px;
   }
 
   .hero-grid {
@@ -1438,11 +1445,11 @@ textarea {
   }
 
   .header-inner {
-    padding: 16px 0 14px;
+    padding: 10px 0 8px;
   }
 
   .logo-image {
-    height: 54px;
+    height: 46px;
   }
 
   .hero-copy,
