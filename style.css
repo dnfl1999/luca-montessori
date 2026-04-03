@@ -1054,6 +1054,124 @@ textarea {
   }
 }
 
+@media (max-width: 768px) {
+  .site-header {
+    backdrop-filter: blur(10px);
+    background: rgba(251, 248, 243, 0.82);
+    box-shadow: 0 8px 20px rgba(41, 28, 16, 0.04);
+  }
+
+  .header-inner {
+    padding: 18px 0 14px;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-list a {
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .language-switch {
+    min-width: 100%;
+    min-height: 44px;
+  }
+
+  .hero-section {
+    padding: 24px 0 18px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .hero-copy {
+    padding: 36px 24px;
+    border-radius: 28px;
+  }
+
+  .hero-copy::before {
+    inset: auto 18px 18px auto;
+    width: 88px;
+    height: 88px;
+  }
+
+  .hero-copy h1 {
+    margin: 18px 0 14px;
+    font-size: clamp(2.15rem, 8vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .hero-actions .btn,
+  .cta-banner .btn,
+  .contact-form .btn {
+    width: 100%;
+    min-height: 52px;
+    justify-content: center;
+  }
+
+  .hero-points {
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .section,
+  .section-accent,
+  .section-dark,
+  .section-accent-soft,
+  .cta-section {
+    padding: 72px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section-heading h2,
+  .contact-copy h2 {
+    line-height: 1.24;
+  }
+
+  .cta-banner {
+    gap: 16px;
+    padding: 28px 24px;
+    border-radius: 28px;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     line-height: 1.6;
@@ -1073,9 +1191,7 @@ textarea {
   }
 
   .nav-list {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
     gap: 10px;
   }
 
@@ -1087,8 +1203,8 @@ textarea {
   }
 
   .language-switch {
-    min-height: 40px;
     min-width: 72px;
+    min-height: 40px;
   }
 
   .hero-section {

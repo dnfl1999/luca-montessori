@@ -27,12 +27,19 @@ Not used in production and safe to remove from the working folder:
 - `site.webmanifest`
 - `HANDOFF.md`
 
+Current manifest status:
+
+- `site.webmanifest` is not linked in `index.html`, `ko.html`, or `vi.html`
+- the live site currently uses only `images/favicon.svg` in the HTML head
+- `site.webmanifest` should be treated as unused unless a real PWA setup is added later
+
 ## Deployment Notes
 
 - Main entry page is `index.html`
 - Korean page is `ko.html`
 - Vietnamese page is `vi.html`
 - All internal asset paths are configured with relative paths for static hosting
+- `site.webmanifest` is not part of the current live site
 - For Netlify, set the publish directory to the project root `.`
 
 ## Netlify Setup
