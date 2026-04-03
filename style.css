@@ -649,9 +649,30 @@ textarea {
   letter-spacing: -0.03em;
 }
 
-.theme-card p:last-child {
+.theme-card p:last-of-type {
   margin: 0;
   color: var(--muted);
+}
+
+.theme-bullets {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.theme-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.theme-bullets li::before {
+  content: "•";
+  flex-shrink: 0;
+  color: var(--brand-deep);
 }
 
 .program-weeks-heading {
